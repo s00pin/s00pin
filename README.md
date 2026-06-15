@@ -1,26 +1,11 @@
 # Hi there, I'm ${\color{#58A6FF}\text{Swopnil}}$ 👋
 ### 💻 Full-Stack Developer
 
-> [!NOTE]
+> [!about me]
 > Building modern web experiences and scalable backend systems.
 > I'm Swopnil, a full-stack developer based in 🇧🇪 Belgium.
 
 ---
-
-### 🛠️ Tech Stack & Tools
-<!-- These badges add instant color and look highly professional -->
-![JavaScript](https://shields.io)
-![TypeScript](https://shields.io)
-![React](https://shields.io)
-![NodeJS](https://shields.io)
-![Python](https://shields.io)
-
----
-
-### 📈 GitHub Stats
-<!-- Optional: Add dynamic color cards to show your coding stats -->
-![](https://vercel.app)
-
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/swop-nil)
 <br/>
