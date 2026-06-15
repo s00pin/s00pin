@@ -3,7 +3,7 @@
 
 > [!NOTE]
 > Building modern web experiences and scalable backend systems.
-> I'm Swopnil, a full-stack developer based in 🇧🇪 Belgium.
+> Based in 🇧🇪 Belgium.
 
 ---
 
