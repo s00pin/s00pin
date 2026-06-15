@@ -1,7 +1,7 @@
 # Hi there, I'm ${\color{#58A6FF}\text{Swopnil}}$ 👋
 ### 💻 Full-Stack Developer
 
-> [!about me]
+> [!NOTE]
 > Building modern web experiences and scalable backend systems.
 > I'm Swopnil, a full-stack developer based in 🇧🇪 Belgium.
 
