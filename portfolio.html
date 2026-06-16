@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of [name], [job title]">
+    <title>[name] - Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+</head>
+
+<body>
+    <!-- Burger Menu for Mobile -->
+    <div class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <!-- Sidebar for Desktop -->
+    <div class="sidebar">
+        <a href="#welcome" class="nav-link">Welcome</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Welcome Section -->
+        <section id="welcome" class="active">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi, I'm [name], a passionate [...] specializing in [...].</p>
+            <p>In this portfolio, you'll see my work in building [projects], and more. I strive to create innovative solutions for every project I take on.</p>
+        </section>
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I have a deep passion for [...]. With a degree in [...], I combine creativity with technical expertise to develop robust solutions.</p>
+        </section>
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>University of Wolverhampton</strong> - BSc (Hons) in Computing and Information Technology (Graduating May 2024)</li>
+            </ul>
+        </section>
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>[position]</strong> | [company] ([date])</li>
+                <li>[achivement 1]</li>
+		<li>[achivement 2]</li>
+            </ul>
+        </section>
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>[project 1]</strong> - [project description]
+                    <a href="#" target="_blank">[Live Demo]</a></li>
+                <li><strong>[project 2]</strong> - [project description]
+                    <a href="#" target="_blank">[Live Demo]</a></li>
+
+            </ul>
+        </section>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span>[skill 1]</span>
+                <span>[skill 2]</span>
+		<span>[skill 3]</span>
+		<span>[skill 4]</span>
+		<span>[skill 5]</span>
+		<span>[skill 6]</span>
+		<span>[skill 7]</span>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out to me via email or LinkedIn:</p>
+            <p class="contact-info">Email: <a href="mailto:">[email]</a> | LinkedIn: <a href="#" target="_blank">[link to linkedin]</a></p>
+        </section>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Swopnil Sapkota</p>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let currentSectionIndex = 0; // Start at the first section
+            const sections = $(".container section");
+            const numSections = sections.length;
+            const sidebar = $(".sidebar");
+            const burgerMenu = $(".burger-menu");
+            let isScrolling = false; // Prevent multiple scrolls during animation
+    
+            let touchStartY = 0; // Starting Y-coordinate for touch
+            let touchEndY = 0; // Ending Y-coordinate for touch
+    
+            // Function to scroll to a specific section
+            function scrollToSection(index) {
+                if (index >= 0 && index < numSections) {
+                    isScrolling = true; // Prevent additional scrolls during animation
+                    sections.removeClass("active");
+                    sections.eq(index).addClass("active");
+                    sidebar.removeClass("active");
+                    burgerMenu.removeClass("active");
+    
+                    // Smooth scroll
+                    $("html, body").animate(
+                        { scrollTop: sections.eq(index).offset().top },
+                        600,
+                        function () {
+                            isScrolling = false; // Re-enable scrolling after animation
+                        }
+                    );
+                }
+            }
+    
+            // Mouse wheel scrolling for desktop
+            $(window).on("wheel DOMMouseScroll", function (e) {
+                if (isScrolling) return;
+    
+                const delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+    
+                if (delta > 0) {
+                    // Scroll up
+                    currentSectionIndex = Math.max(0, currentSectionIndex - 1);
+                } else {
+                    // Scroll down
+                    currentSectionIndex = Math.min(numSections - 1, currentSectionIndex + 1);
+                }
+    
+                scrollToSection(currentSectionIndex);
+            });
+    
+            // Touch scrolling for mobile
+            $(window).on("touchstart", function (e) {
+                touchStartY = e.originalEvent.touches[0].clientY;
+            });
+    
+            $(window).on("touchend", function (e) {
+                touchEndY = e.originalEvent.changedTouches[0].clientY;
+    
+                if (isScrolling) return;
+    
+                if (touchStartY - touchEndY > 50) {
+                    // Swipe up
+                    currentSectionIndex = Math.min(numSections - 1, currentSectionIndex + 1);
+                    scrollToSection(currentSectionIndex);
+                } else if (touchEndY - touchStartY > 50) {
+                    // Swipe down
+                    currentSectionIndex = Math.max(0, currentSectionIndex - 1);
+                    scrollToSection(currentSectionIndex);
+                }
+            });
+    
+            // Sidebar navigation
+            $(".sidebar a").click(function (e) {
+                e.preventDefault();
+                const target = $(this).attr("href");
+                currentSectionIndex = sections.index($(target)); // Update the section index
+                scrollToSection(currentSectionIndex);
+            });
+    
+            // Burger menu toggle
+            $(".burger-menu").click(function () {
+                $(this).toggleClass("active"); // Toggle the burger menu animation
+                $(".sidebar").toggleClass("active"); // Show or hide the sidebar
+            });
+        });
+    </script>
+    
+</body>
+</html>
