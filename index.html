@@ -1,145 +1,65 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Swopnil Sapkota | Portfolio</title>
+  <title>Swopnil</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header class="hero">
-    <div class="container">
-      <nav>
-        <h2>Swopnil.</h2>
-        <!-- <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a> 
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </div> -->
-      </nav>
-
-      <div class="hero-content">
-        <p class="tag">Full-Stack Developer</p>
-        <h1>Building modern web experiences and scalable backend systems.</h1>
-        <p class="intro">
-          I'm Swopnil , a full-stack developer based in Belguim.
-          
-        </p> 
-
-        <div class="buttons">
-          <a href="https://github.com/s00pin" target="_blank" class="btn primary">GitHub</a>
-          <a href="#projects" class="btn secondary">View Projects</a>
-        </div>
-      </div>
-    </div>
-  </header>
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        I build responsive websites and modern web experiences with a focus on clean design,
-        smooth interactions, and practical functionality.
+  <main class="hero">
+    <div class="hero-frame">
+      <p class="eyebrow">Hi, I’m</p>
+      <h1 class="hero-title">Swopnil</h1>
+      <p class="hero-copy">
+        
+        <span class="typing"></span><span class="cursor">|</span>
+      </p>
+      <p class="hero-note">
+        <span class="highlighted-link">hello@swop-nil.com</span>
+      </br>
+        <a class="simple-accent-link" href="https://www.linkedin.com/in/swop-nil" target="_blank" rel="noopener">linkedin</a>
+        <a class="simple-accent-link" href="https://github.com/s00pin" target="_blank" rel="noopener">github</a>
       </p>
     </div>
-  </section>
+  </main>
 
-  <section id="projects" class="section alt">
-    <div class="container">
-      <h2>Projects</h2>
-      <p>
-        These projects combine thoughtful design with practical features and a clear user experience.
-      </p>
+  <script>
+    const phrases = [
+      'Full-stack developer',
+      'Belgium-based'
+      
+    ];
+    const typingElement = document.querySelector('.typing');
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let adding = true;
 
-      <div class="cards">
-        <div class="card">
-          <div class="card-content">
-            <h3>Portfolio Demo</h3>
-            <p>
-              A polished personal portfolio page built with HTML and CSS to showcase work and contact details clearly.
-            </p>
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-            </div>
-          </div>
-          <a href="demo1.html" target="_blank" rel="noopener" class="project-link">View demo</a>
-        </div>
+    function tick() {
+      const current = phrases[phraseIndex];
+      if (adding) {
+        charIndex += 1;
+        typingElement.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          adding = false;
+          setTimeout(tick, 1400);
+          return;
+        }
+      } else {
+        charIndex -= 1;
+        typingElement.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          adding = true;
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          setTimeout(tick, 400);
+          return;
+        }
+      }
+      setTimeout(tick, adding ? 80 : 35);
+    }
 
-        <div class="card">
-          <div class="card-content">
-            <h3>Portfolio Template</h3>
-            <p>
-              A reusable template for creating professional portfolios with a modern design.
-            </p>
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>Bootstrap</span>
-            </div>
-          </div>
-          <a href="portfolio.html" target="_blank" rel="noopener" class="project-link">View demo</a>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h3>Movie Archives</h3>
-            <p>
-              A movie archive and review platform with Firestore integration, CRUD actions, and sorting.
-            </p>
-            <div class="project-tags">
-              <span>PHP (OOP)</span>
-              <span>CodeIgniter 4</span>
-              <span>MySQL</span>
-              <span>JavaScript</span>
-              <span>AJAX</span>
-              <span>Geolocation</span>
-            </div>
-            <div class="project-status">
-              <span>Demo coming soon</span>
-            </div>
-          </div>
-          <a href="#" class="project-link disabled" aria-disabled="true">Demo coming soon</a>
-        </div>
-
-
-        <div class="card">
-          <div class="card-content">
-            <h3>Web Performance</h3>
-            <p>
-              A performance-focused frontend experiment centered on accessibility and responsive design.
-            </p>
-            <div class="project-tags">
-              <span>Performance</span>
-              <span>Accessibility</span>
-            </div>
-          </div>
-          <a href="#" target="_blank" rel="noopener" class="project-link disabled" aria-disabled="true">Demo coming soon</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>
-        Interested in working together or sharing a new idea? I’m always happy to connect.
-      </p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-content">
-      <p>© 2026 Swopnil</p>
-      <div class="footer-links">
-        <a href="mailto:hello@swop-nil.com">Email</a>
-        <a href="https://github.com/s00pin" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </footer>
-
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+    tick();
+  </script>
 </body>
 </html>
