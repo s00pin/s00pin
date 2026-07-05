@@ -1,79 +1,63 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Swopnil</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Swopnil portfolio home page.">
+  <title>Swopnil | Home</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="hero">
-    <div class="hero-frame">
-      <p class="eyebrow">Hi, I’m</p>
-      <h1 class="hero-title">Swopnil</h1>
-      <p class="hero-copy">
-        
-        <span class="typing"></span><span class="cursor">|</span>
-      </p>
-      
-      <p class="hero-note">
-        Find my works here: 
-      </p>
+  <main class="page" aria-label="Home">
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Swopnil home">
+        <img class="brand-logo" src="favicon.svg" alt="">
+        <span>swopnil</span>
+      </a>
 
-      <div class="hero-actions">
-        <a class="simple-accent-link" href="https://music.swop-nil.com/" target="_blank" rel="noopener">Music web using Django</a>
-        <a class="simple-accent-link" href="https://media.swop-nil.com/" target="_blank" rel="noopener">Movie web using CodeIgniter4</a>
-        <a class="simple-accent-link" href="https://swop-nil.com/portfolio.html" target="_blank" rel="noopener">portfolio template</a>
-        <a class="simple-accent-link" href="https://swop-nil.com/demo1.html" target="_blank" rel="noopener">demo page</a>
+      <div class="nav-left">
+        <a class="nav-link" href="index.html" aria-current="page">home</a>
+        <a class="nav-link" href="info.html">info</a>
       </div>
 
-      <div class="hero-links">
-        <p class="hero-links-label">drop a <span class="highlighted-link">hello [at] swop-nil.com</span></p>
-        <div class="social-links">
-          <a class="social-link" href="https://github.com/s00pin" target="_blank" rel="noopener">GitHub</a>
-          <a class="social-link" href="https://www.linkedin.com/in/swop-nil" target="_blank" rel="noopener">linkedin</a>
-        </div>
+      <div class="nav-right">
+        <a class="nav-link" href="https://github.com/s00pin" target="_blank" rel="noopener noreferrer">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.12.82-.26.82-.58v-2.02c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.08 1.84 2.82 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.48-1.34-5.48-5.96 0-1.31.47-2.39 1.24-3.24-.12-.3-.54-1.53.12-3.18 0 0 1.01-.32 3.31 1.24a11.4 11.4 0 0 1 6.02 0c2.3-1.56 3.31-1.24 3.31-1.24.66 1.65.24 2.88.12 3.18.77.85 1.24 1.93 1.24 3.24 0 4.63-2.82 5.65-5.51 5.95.43.37.82 1.1.82 2.21v3.28c0 .32.22.71.83.58A12 12 0 0 0 12 .5Z"/></svg>
+          <span>github</span>
+        </a>
+        <a class="nav-link" href="https://www.linkedin.com/in/swop-nil" target="_blank" rel="noopener noreferrer">
+          <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3V9Zm7 0h3.83v1.64h.05c.53-1.01 1.84-2.08 3.79-2.08C21.1 8.56 22 10.8 22 14.02V21h-4v-6.08c0-1.45-.03-3.31-2.02-3.31-2.03 0-2.34 1.58-2.34 3.2V21h-4V9Z"/></svg>
+          <span>linkedin</span>
+        </a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">light</button>
       </div>
-    </div>
+    </nav>
+
+    <section class="home-grid">
+      <article class="outline-box">
+        <p class="kicker">HI, I AM</p>
+        <h1>Swopnil</h1>
+        <p class="subhead">Full-stack developer based in Belgium.</p>
+        <p>I build practical web applications and backend systems using Django, CodeIgniter, Python, PHP, SQL, HTML, CSS, and JavaScript.</p>
+        <p>Open to full-time roles and freelance collaborations.</p>
+        <p>drop a <span class="email-pill">hello [at] swop-nil.com</span></p>
+
+       
+      </article>
+
+      <aside class="outline-box">
+        <h2>Live projects</h2>
+        <ul class="clean-list">
+          <li><a href="https://music.swop-nil.com/" target="_blank" rel="noopener noreferrer">Music web using Django</a></li>
+          <li><a href="https://media.swop-nil.com/" target="_blank" rel="noopener noreferrer">Movie web using CodeIgniter4</a></li>
+          <li><a href="https://github.com/s00pin" target="_blank" rel="noopener noreferrer">Repository work on GitHub</a></li>
+        </ul>
+        <p class="footer-note">For complete profile, skills, and contact details, open the info page.</p>
+      </aside>
+    </section>
   </main>
 
-  <script>
-    const phrases = [
-      'Full-stack developer',
-      'Belgium-based'
-      
-    ];
-    const typingElement = document.querySelector('.typing');
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let adding = true;
-
-    function tick() {
-      const current = phrases[phraseIndex];
-      if (adding) {
-        charIndex += 1;
-        typingElement.textContent = current.slice(0, charIndex);
-        if (charIndex === current.length) {
-          adding = false;
-          setTimeout(tick, 1400);
-          return;
-        }
-      } else {
-        charIndex -= 1;
-        typingElement.textContent = current.slice(0, charIndex);
-        if (charIndex === 0) {
-          adding = true;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(tick, 400);
-          return;
-        }
-      }
-      setTimeout(tick, adding ? 80 : 35);
-    }
-
-    document.addEventListener('contextmenu', (e) => e.preventDefault());
-    tick();
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
